@@ -1,0 +1,38 @@
+.container {
+    margin: 0 auto;
+    text-align: center;
+    min-height: calc(100vh);
+    background-color: #baccd1;
+    padding: 2rem;
+    font-weight: bold;
+}
+header {
+    margin: 2rem 2rem 4rem;
+}
+.form-group {
+    text-align: left;
+}
+.form-control{
+    margin: .5rem 0;
+}
+.btn {
+    background-color: #0e5f76;
+    border-color: #052838;
+}
+.btn-success[disabled]:hover {
+    background-color: #527680;
+    border-color: #2f3c42;
+}
+.btn-success:active {
+    background-color: #052838;
+}
+.btn-success:focus {
+    background-color: #052838;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
