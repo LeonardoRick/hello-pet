@@ -12,8 +12,8 @@
 
   </main>
   <footer>
-      <button class="button button__register" routerLink="register"> Quero me cadastrar! </button> <br>
-      <button class="button button__care"> Sou um cuidador </button> <br>
+      <button class="button button__register" [routerLink]="['register', 'user']"> Quero me cadastrar! </button> <br>
+      <button class="button button__care" [routerLink]="['register','caregiver']"> Sou um cuidador </button> <br>
   </footer>
 </div>
 

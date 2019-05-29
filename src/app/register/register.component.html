@@ -1,43 +1,64 @@
+<header>
+  <button routerLink=""> 
+    <i class="material-icons">
+    arrow_back_ios
+    </i>
+  </button>
+    <div>
+      <h1>Cadastro</h1>
+    </div>
+</header>
 <div class="container">
-  <!-- TODO REMOVE THIS COMMENT WHEN GOES TO PROD{{ diagnostic }} -->
-  <header>
+  <!-- TODO REMOVE THIS COMMENT WHEN GOES TO PROD
+  {{ diagnostic }} -->
+  <div class="container--header">
     <h1> Bem vindo {{ registerPerson }}</h1>
-  </header>
-  <div [hidden]="submitted">
-    <h2>Cadastro</h2>
-    <form (ngSubmit)="onSubmit()" #careGiverForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required
-              [(ngModel)]="model.name" name="name"
-              #nameFlag="ngModel">
-
-        <div [hidden]="nameFlag.valid || nameFlag.pristine"
-            class="alert alert-danger">
-          Name is required
-        </div>     
-      </div>
-
-      <div class="form-group">
-        <label for="email">email</label>
-        <input type="email" class="form-control" id="email" required
-          [(ngModel)]="model.email" name="email" #emailFlag="ngModel">
-
-          <div [hidden]="emailFlag.valid || emailFlag.pristine"
-          class="alert alert-danger">
-      Name is required
-    </div> 
-      </div>
-      <div class="form-group">
-        <label for="careSpec">Especialidade do cuidador</label>
-        <select class="form-control" id="power"
-          [(ngModel)]="model.mainSpec" name="mainSpec">
-          <option *ngFor="let spec of careSpecs" [value]="spec">{{ spec }}</option>
-        </select>
-      </div>
-
-      <button type="submit" (click)="newCaregiver(); careGiverForm.reset()" class="btn btn-success"
-      [disabled]="!careGiverForm.form.valid">Submit</button>
-    </form>
   </div>
+
+  <form (ngSubmit)="onSubmit(); careGiverForm.reset();" #careGiverForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required
+            [(ngModel)]="model.name" name="name"
+            #nameFlag="ngModel">
+
+      <div [hidden]="nameFlag.valid || nameFlag.pristine"
+          class="alert alert-danger">
+        Nome é obrigatório!
+      </div>     
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" id="email" required
+        [(ngModel)]="model.email" name="email" #emailFlag="ngModel">
+
+      <div [hidden]="emailFlag.valid || emailFlag.pristine"
+        class="alert alert-danger">
+        E-mail é obrigatório!
+      </div> 
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input type="password" class="form-control" id="password" required
+        [(ngModel)]="model.password" name="password" #passwordFlag="ngModel">
+
+      <div [hidden]="passwordFlag.valid || passwordFlag.pristine"
+        class="alert alert-danger">
+        Senha é obrigatória!
+      </div> 
+    </div>
+    <div class="form-group" *ngIf="id === 'caregiver'">
+      <label for="careSpec">Especialidade do cuidador</label>
+      <select class="form-control" id="power"
+        [(ngModel)]="model.mainSpec" name="mainSpec">
+        <option *ngFor="let spec of careSpecs" [value]="spec">{{ spec }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success"
+    [disabled]="!careGiverForm.form.valid">Submit</button>
+  </form>
+ 
 </div>

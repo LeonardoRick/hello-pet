@@ -9,9 +9,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'register',
-    component: RegisterComponent,
-    pathMatch: 'full'
+    path: 'register/:id',
+    component: RegisterComponent
   }
 ];
 

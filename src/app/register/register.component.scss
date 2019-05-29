@@ -3,11 +3,39 @@
     text-align: center;
     min-height: calc(100vh);
     background-color: #baccd1;
-    padding: 2rem;
+    padding: 3rem;
     font-weight: bold;
 }
 header {
-    margin: 2rem 2rem 4rem;
+    height: 2.7rem;
+    background-color: #0e5f76;
+    color: #baccd1;
+    button {
+        width: inherit;
+        height: inherit;
+        padding: inherit;
+        margin: inherit;
+        background: none;
+        border: none;
+    }
+    i {
+        padding: .7rem;
+        color: #baccd1;
+        display: inline-block;
+    }
+    h1 {
+        display: inline-block;
+    }
+    div {
+        display: inline-block;
+        position: relative;
+        bottom: .3rem;
+        width: 80vw;
+        text-align: center;
+    }
+}
+.container--header {
+    margin-bottom: 2rem;
 }
 .form-group {
     text-align: left;
@@ -16,6 +44,7 @@ header {
     margin: .5rem 0;
 }
 .btn {
+    margin-top: 1rem;
     background-color: #0e5f76;
     border-color: #052838;
 }
@@ -33,6 +62,6 @@ header {
     border-left: 5px solid #42A948; /* green */
   }
   
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
-  }
+.ng-invalid:not(form)  {
+border-left: 5px solid #a94442; /* red */
+}
